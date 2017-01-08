@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script type="text/javascript" src="array.binary-search.js" ></script>
+<script type="text/javascript">
+
+var fruits = [
+  "apples",
+  "bananas",
+  "cherries",
+  "mangos",
+  "oranges",
+  "peaches",
+  "pears"
+];
+
+var people = [
+  { id: 1, name: 'Adam', grade : 65},
+  { id: 1, name: 'Beth', grade : 82},
+  { id: 1, name: 'Carla', grade : 75},
+  { id: 1, name: 'Don', grade : 42},
+  { id: 1, name: 'Fred', grade : 98},
+  { id: 1, name: 'Gabby', grade : 87}
+];
+
+function peopleCompare(value, compareElement)
+{
+  var result;
+  
+  if (value.name < compareElement.name)
+    result = 1;
+  else if (value.name > compareElement.name)
+    result = -1;
+  else
+    result = 0;
+}
+
+document.writeln('Simple object index: ' + fruits.binarySearch('mangos'));
+document.writeln ('Complex object index: ' + people.binarySearch('Don', peopleCompare));
+
+var person = people.binarySearch('Don', peopleCompare, true);
+document.writeln('Complex object search item: name:' + person.name + ' grade:' + person.grade);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
